@@ -1,0 +1,35 @@
+= docs-elastic-search
+
+The all new all-singing Elastic Search docsproject, extracted 
+from https://github.com/couchbase/couchbase-elasticsearch-connector
+
+== Technical notes on Extraction
+
+[source,console]
+--
+brew install git-filter-repo
+
+# download *new* copy
+gh repo clone couchbase/couchbase-elasticsearch-connector
+git clone couchbase-elasticsearch-connector
+cd docs-elastic-search
+
+# checkout all the different release tags in turn
+
+# remove noise from millions of tags
+git remote rm origin
+
+git branch -m master main
+
+git filter-repo --subdirectory-filter docs/ --refs main release/4.0 release/4.1 release/4.2 release/4.3 release/alder release/cypress
+# run filter-repo again with --force
+# we know this is OK this time, because this *is* a new checkout!
+
+
+# create README.adoc
+git add README.adoc
+git commit -m "AV-80236: add README"
+
+git remote add origin git@github.com:couchbase/docs-elastic-search.git
+git push -u origin main
+--

@@ -213,6 +213,57 @@ CAUTION: You must stop all connector instances in a group before modifying the r
 The following commands are specific to the solo and distributed modes.
 xref:autonomous-operations.adoc[Autonomous Operations mode] has its own separate commands for managing checkpoints.
 
+[#checkpoint-command-config]
+=== Configuring the checkpoint management commands
+
+The checkpoint management commands use the same config file as the connector.
+The `--config` argument tells the checkpoint management command the filesystem path of the config file to use.
+For example:
+
+    cbes-<command> --config <path/to/connector/config.toml>
+
+If the `--config` argument is not specified, the path defaults to `config/default-connector.toml`.
+
+When running a checkpoint management command from an environment where the connector is already installed and configured, use the same config file as the connector.
+
+If you want to run a checkpoint management command in a different environment, you'll need to:
+
+. Get the connector distribution archive and unzip it.
+. Edit the `config/example-connector.toml` and `config/secrets/couchbase-password.toml` files to match the settings of the connector whose checkpoints you want to manage.
+
+The checkpoint management commands use only the following parts of the config file:
+
+* The `name` field from the `[group]` section.
+* The `[couchbase]` section.
+* The `[couchbase.clientCertificate]` section, if applicable.
+* The `[couchbase.env]` section, if applicable.
+
+See xref:configuration.adoc[connector configuration] for details about these settings.
+
+WARNING: Although the other config sections are unused by the checkpoint management commands, they must still be present in the config file, otherwise the commands fail and complain of an invalid config file.
+Any files referenced by the config must also be present (for example, the contents of the `secrets` directory).
+
+[TIP]
+====
+Instead of hardcoding values in the connector config file, you can pass in values via environment variables.
+This requires editing the config file to use environment variable placeholders.
+
+For example, you could edit your config file to say:
+
+[source,toml]
+----
+[group]
+name = '${GROUP_NAME}'
+----
+
+Then specify the group name by setting an environment variable when running the checkpoint management command:
+
+    env GROUP_NAME=example-group \
+        cbes-<command> --config <path/to/connector/config.toml>
+
+For more details, see xref:configuration.adoc#environment-variables[using environment variable placeholders in config files].
+====
+
 [#save-checkpoint]
 === Saving the current replication state
 
@@ -245,8 +296,10 @@ If you want to discard all replication state and start streaming from the beginn
 
     cbes-checkpoint-clear
 
-Or, if you want to reset the connector so it starts from the
-current state of the bucket:
+[#catch-up-checkpoint]
+=== Setting the checkpoint to "now"
+
+If you want to reset the connector so it starts from the current state of the bucket, first stop all connector processes in the group, then run:
 
     cbes-checkpoint-clear --catch-up
 

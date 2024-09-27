@@ -619,6 +619,7 @@ It is not necessary to configure `pathToCaCertificate`.
 When connecting to Amazon OpenSearch Service, the `username` property is ignored, and so is the password.
 Instead, the connector gets AWS credentials from the https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/credentials.html[Default Credential Provider Chain].
 
+[#environment-variables]
 == Environment Variables
 
 The connector configuration may reference environment variables.

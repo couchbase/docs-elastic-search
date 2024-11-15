@@ -8,6 +8,26 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.10]]
+== Version 4.4.10 (2024-11-12)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.10/couchbase-elasticsearch-connector-4.4.10.zip[Download]
+
+This maintenance release updates the Couchbase Java SDK to the most recent version.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-318[CBES-318]:
+Upgrade Couchbase Java Client from 3.7.1 to 3.7.5
+
+* https://jira.issues.couchbase.com/browse/CBES-319[CBES-319]:
+Upgrade Java DCP client from 0.51.0 to 0.52.0
+
+=== Bug Fixes
+
+* https://jira.issues.couchbase.com/browse/CBES-315[CBES-315]:
+Resolved an issue that caused Kubernetes Native Integration to fail if log level is TRACE.
+
 [[v4.4.9]]
 == Version 4.4.9 (2024-07-25)
 

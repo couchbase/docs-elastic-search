@@ -8,6 +8,44 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.12]]
+== Version 4.4.12 (2025-03-13)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.12/couchbase-elasticsearch-connector-4.4.12.zip[Download]
+
+This maintenance release adds support for AWS IRSA authentication in Kubernetes, improves the connector's checkpoint behavior, and upgrades dependency versions.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-327[CBES-327]:
+Added support for AWS IRSA authentication in Kubernetes.
+Thanks to https://github.com/clupo[Christopher Lupo].
+
+* https://jira.issues.couchbase.com/browse/CBES-326[CBES-326]:
+Added a `defaultCheckpoint` property to the `[couchbase]` section of the connector config file.
+This new property controls where in history the connector starts from if there is no replication checkpoint for a partition.
++
+Possible values:
++
+** `'ZERO'` -- Replicate past and future changes.
+This is the default value.
+** `'NOW'` -- Replicate only changes that happen after the connector starts.
+
+* https://jira.issues.couchbase.com/browse/CBES-331[CBES-331]:
+All absent replication checkpoints are now immediately created when the connector starts up.
+This improves on the previous behavior, where the connector would not save a checkpoint for a partition until a document was received from that partition.
+
+* https://jira.issues.couchbase.com/browse/CBES-328[CBES-328]:
+Upgraded Couchbase Java SDK from `3.7.6` to `3.7.9`.
+
+* https://jira.issues.couchbase.com/browse/CBES-329[CBES-329]:
+Upgraded DCP client from `0.52.0` to `0.53.0`.
+
+* https://jira.issues.couchbase.com/browse/CBES-330[CBES-330]:
+Upgraded Elasticsearch client from `8.14.3` to `8.17.3`.
+Upgraded OpenSearch client from `2.12.0` to `2.22.0`.
+
+
 [[v4.4.11]]
 == Version 4.4.11 (2024-12-17)
 

@@ -8,6 +8,26 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.13]]
+== Version 4.4.13 (2025-04-22)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.13/couchbase-elasticsearch-connector-4.4.13.zip[Download]
+
+This maintenance release fixes an issue with AWS IRSA authentication in Kubernetes, and upgrades dependency versions.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-332[CBES-332]:
+Upgraded awssdk to version `2.31.2` for IRSA compatability.
+Thanks to https://github.com/clupo[Christopher Lupo].
+
+* https://jira.issues.couchbase.com/browse/CBES-334[CBES-334]:
+Upgraded Couchbase Java SDK from `3.7.9` to `3.8.0`.
+
+* https://jira.issues.couchbase.com/browse/CBES-335[CBES-335]:
+Upgraded DCP client from `0.53.0` to `0.54.0`.
+
+
 [[v4.4.12]]
 == Version 4.4.12 (2025-03-13)
 

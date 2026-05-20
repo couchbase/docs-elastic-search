@@ -8,6 +8,27 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.15]]
+== Version 4.4.15 (2026-05-20)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.15/couchbase-elasticsearch-connector-4.4.15.zip[Download]
+
+This version updates various dependencies to more recent versions.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-344[CBES-344]:
+Upgraded `okhttp3` from `4.12.0` to `5.3.2`.
+
+* https://jira.issues.couchbase.com/browse/CBES-346[CBES-346]:
+Upgraded `log4j` from `2.23.1` to `2.25.4`.
+
+* https://jira.issues.couchbase.com/browse/CBES-347[CBES-347]:
+Ensure transitive dependency on `vertx-core` is version `4.5.27` or higher.
+
+* https://jira.issues.couchbase.com/browse/CBES-348[CBES-348]:
+Upgraded `netty` from `4.1.119` to `4.1.133`.
+
 [[v4.4.14]]
 == Version 4.4.14 (2025-10-23)
 

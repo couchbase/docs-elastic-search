@@ -8,6 +8,36 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.16]]
+== Version 4.4.16 (2026-09-15)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.16/couchbase-elasticsearch-connector-4.4.16.zip[Download]
+
+This version updates various dependencies to more recent versions and adds the ability to specify ciphers.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-349[CBES-349]:
+Add ability to specify the cipher suites used for the connection to the Couchbase cluster.
+
+* https://jira.issues.couchbase.com/browse/CBES-350[CBES-350]:
+Upgraded `jackson` from `2.20.0` to `2.21.5`.
+
+* https://jira.issues.couchbase.com/browse/CBES-352[CBES-352]:
+Upgraded DCP client from `0.56.0` to `0.58.0`.
+
+* https://jira.issues.couchbase.com/browse/CBES-353[CBES-353]:
+Upgraded Couchbase client to `3.12.2`.
+
+* https://jira.issues.couchbase.com/browse/CBES-354[CBES-354]:
+Upgraded `slf4j2` from `2.25.4` to `2.25.5`.
+
+* https://jira.issues.couchbase.com/browse/CBES-355[CBES-355]:
+Upgraded `netty` from `4.1.133` to `4.1.137`.
+
+* https://jira.issues.couchbase.com/browse/CBES-356[CBES-356]:
+Upgraded `httpclient5` from `5.4.4` to `5.6.4`.
+
 [[v4.4.15]]
 == Version 4.4.15 (2026-05-20)
 

@@ -26,7 +26,7 @@ Upgraded Couchbase client from `3.12.2` to `3.12.3`.
 === Bug Fixes
 
 * https://jira.issues.couchbase.com/browse/CBES-359[CBES-359]:
-Intermittent deadlock solved during metrics initialization
+Intermittent deadlock solved during metrics initialization.
 
 [[v4.4.16]]
 == Version 4.4.16 (2026-09-15)

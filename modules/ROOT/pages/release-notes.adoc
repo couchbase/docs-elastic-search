@@ -8,6 +8,26 @@ Release notes, installation instructions, and download archive for the Couchbase
 Scroll down to the version you want, then click the "Download" link to get the full connector distribution.
 Refer to xref:getting-started.adoc[] for detailed installation instructions.
 
+[[v4.4.17]]
+== Version 4.4.17 (2026-10-20)
+
+https://packages.couchbase.com/clients/connectors/elasticsearch/4.4.17/couchbase-elasticsearch-connector-4.4.17.zip[Download]
+
+This version updates various dependencies to more recent versions and fixes an intermittent deadlock.
+
+=== Enhancements
+
+* https://jira.issues.couchbase.com/browse/CBES-357[CBES-357]:
+Upgraded `netty` from `4.1.137` to `4.1.138`.
+
+* https://jira.issues.couchbase.com/browse/CBES-358[CBES-358]:
+Upgraded Couchbase client from `3.12.2` to `3.12.3`.
+
+=== Bug Fixes
+
+* https://jira.issues.couchbase.com/browse/CBES-359[CBES-359]:
+Intermittent deadlock solved during metrics initialization.
+
 [[v4.4.16]]
 == Version 4.4.16 (2026-09-15)
 
